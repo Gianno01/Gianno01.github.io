@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>portfolio</title>
+  <meta name="description" content="Portfolio — XR, technical art, VFX, computer vision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <a href="./" class="name" id="site-name"></a>
+    <p class="role" id="site-role"></p>
+    <nav class="filters" id="filters" aria-label="filtri"></nav>
+  </header>
+
+  <main id="feed" class="feed"></main>
+
+  <footer class="bottom">
+    <article class="manifesto">
+      <span class="date">about</span>
+      <p id="manifesto"></p>
+    </article>
+    <div class="foot">
+      <span id="copy"></span>
+      <span id="contacts" class="contacts"></span>
+    </div>
+  </footer>
+
+  <div id="peek" class="peek" aria-hidden="true"></div>
+
+  <script src="projects.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

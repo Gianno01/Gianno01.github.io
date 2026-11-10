@@ -11,6 +11,7 @@
   const titleCase = s => s.replace(/(^|[\s\-–—:(\/_"])(\p{Ll})/gu, (m, a, b) => a + b.toUpperCase());
   const UI = {
     about: { it: "about", en: "about" },
+    role:  { it: "ruolo", en: "role" },
     all:   { it: "tutti", en: "all" }
   };
 
@@ -18,6 +19,7 @@
   const plainName = S.name.replace(/\.$/, "");
   document.title = plainName + " — portfolio";
   $("#site-name").textContent = S.name;
+  const docsBox = $("#docs");
   $("#copy").textContent = "© " + new Date().getFullYear() + " " + plainName;
   S.contacts.forEach(c => {
     const a = el("a", null, t(c.label)); a.href = c.url;
@@ -46,6 +48,8 @@
     $("#site-role").textContent = t(S.role);
     $("#manifesto").textContent = t(S.manifesto);
     $("#about-label").textContent = t(UI.about);
+    docsBox.innerHTML = "";
+    (S.docs || []).forEach(d => { const a = el("a", null, t(d.label) + " ↓"); a.href = d.url; a.download = ""; docsBox.append(a); });
 
     const open = new Set([...document.querySelectorAll(".item.open")].map(i => i.id));
     feed.innerHTML = "";
@@ -68,10 +72,18 @@
     const inner = el("div", "detail-inner");
     const body = el("div");
     body.append(el("p", "detail-text", t(p.text)));
+    if (p.role) {
+      const r = t(p.role), nd = r.trim().toUpperCase() === "N/D";
+      const rp = el("p", "prole" + (nd ? " nd" : ""));
+      rp.innerHTML = `<b>${t(UI.role)}:</b> `; rp.append(r);
+      body.append(rp);
+    }
     if (p.tags?.length) body.append(el("p", "tags", p.tags.map(x => "#" + x).join("  ")));
     if (p.links?.length) {
       const l = el("div", "links");
-      p.links.forEach(x => { const a = el("a", null, t(x.label) + " ↗"); a.href = x.url; a.target = "_blank"; a.rel = "noopener"; l.append(a); });
+      p.links.forEach(x => { const a = el("a", null, t(x.label) + (x.download ? " ↓" : " ↗")); a.href = x.url;
+        if (x.download) a.download = ""; else { a.target = "_blank"; a.rel = "noopener"; }
+        l.append(a); });
       body.append(l);
     }
     inner.append(el("span"), body);
@@ -165,16 +177,10 @@
   render();
   if (location.hash) document.getElementById(location.hash.slice(1))?.querySelector(".row")?.click();
 
-  /* ── background: rotating point cloud (a nod to gaussian splats) ── */
+  /* ── background: a slowly turning DNA double helix ── */
   const cv = $("#bg"), ctx = cv.getContext("2d");
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   let W, H, dpr;
-  const N = 1400, pts = [];
-  for (let i = 0; i < N; i++) {
-    const a = (i / N) * Math.PI * 2, r = .55 + .25 * Math.cos(3 * a);
-    const j = () => (Math.random() - .5) * .09;
-    pts.push([r * Math.cos(2 * a) + j(), r * Math.sin(2 * a) + j(), .3 * Math.sin(3 * a) + j(), Math.random()]);
-  }
   function resize() {
     dpr = Math.min(devicePixelRatio || 1, 2);
     W = cv.width = innerWidth * dpr; H = cv.height = innerHeight * dpr;
@@ -182,19 +188,49 @@
   resize(); addEventListener("resize", resize);
   let tx = 0, ty = 0;
   addEventListener("mousemove", e => { tx = (e.clientX / innerWidth - .5); ty = (e.clientY / innerHeight - .5); });
+
+  const TURNS = 3.2, STEPS = 700, RUNGS = 54;
+  const jit = Array.from({ length: STEPS * 2 }, () => [(Math.random() - .5) * .05, (Math.random() - .5) * .05, Math.random()]);
+  const pairCol = Array.from({ length: RUNGS }, () => Math.random() < .18);
   (function draw(time) {
     ctx.clearRect(0, 0, W, H);
-    const ry = time * .00012 + tx * .8, rx = .5 + ty * .6;
-    const cy = Math.cos(ry), sy = Math.sin(ry), cx = Math.cos(rx), sx = Math.sin(rx);
-    const sc = Math.min(W, H) * .42, ox = W * .72, oy = H * .38 - scrollY * dpr * .25;
-    for (const [x, y, z, s] of pts) {
-      const x1 = x * cy - z * sy, z1 = x * sy + z * cy;
-      const y1 = y * cx - z1 * sx, z2 = y * sx + z1 * cx;
-      const f = 2.4 / (2.4 + z2);
-      const al = .15 + .55 * (1 - (z2 + 1) / 2);
-      ctx.fillStyle = s > .97 ? `rgba(215,255,58,${al})` : `rgba(236,235,230,${al * .7})`;
-      const sz = (s > .97 ? 2.2 : 1.1) * dpr * f;
-      ctx.fillRect(ox + x1 * sc * f, oy + y1 * sc * f, sz, sz);
+    const spin = time * .0004 + tx * 1.5;
+    const lean = .38 + tx * .08;                      // in-plane lean of the axis
+    const pitchX = .06 + ty * .12;                    // how much we look down the axis
+    const R = Math.min(W, H) * .15;
+    const len = Math.hypot(W, H) * .95;
+    const ox = W * .74, oy = H * .5 - scrollY * dpr * .15;
+    const cl = Math.cos(lean), sl = Math.sin(lean), cp = Math.cos(pitchX), sp = Math.sin(pitchX);
+    const proj = (u, ang, dx = 0, dy = 0) => {
+      let x = Math.cos(ang) * R + dx * R, y = u * len + dy * R, z = Math.sin(ang) * R;
+      const y2 = y * cp - z * sp, z2 = y * sp + z * cp;   // tilt towards the viewer
+      const f = 1 / (1 + z2 / (R * 9));
+      const X = (x * cl - y2 * sl) * f, Y = (x * sl + y2 * cl) * f;
+      return [ox + X, oy + Y, Math.sin(ang)];
+    };
+    // strands
+    for (let s2 = 0; s2 < 2; s2++) {
+      for (let i = 0; i < STEPS; i++) {
+        const u = i / STEPS - .5, ang = u * TURNS * Math.PI * 2 + spin + s2 * Math.PI;
+        const [jx, jy, rnd] = jit[s2 * STEPS + i];
+        const [x, y, d] = proj(u, ang, jx, jy);
+        const a = .14 + .6 * (1 - (d + 1) / 2);
+        const sz = (1.1 + (1 - d) * .8) * dpr;
+        ctx.fillStyle = rnd > .985 ? `rgba(215,255,58,${a + .2})` : `rgba(236,235,230,${a})`;
+        ctx.fillRect(x, y, sz, sz);
+      }
+    }
+    // base pairs (rungs)
+    for (let k = 0; k < RUNGS; k++) {
+      const u = (k + .5) / RUNGS - .5, ang = u * TURNS * Math.PI * 2 + spin;
+      const A = proj(u, ang), B = proj(u, ang + Math.PI);
+      const a = .16 + .22 * (1 - Math.abs(Math.cos(ang)));
+      const n = 18;
+      for (let j = 1; j < n; j++) {
+        const q = j / n, x = A[0] + (B[0] - A[0]) * q, y = A[1] + (B[1] - A[1]) * q;
+        ctx.fillStyle = pairCol[k] && (q < .5) ? `rgba(215,255,58,${a + .15})` : `rgba(236,235,230,${a})`;
+        ctx.fillRect(x, y, 1.4 * dpr, 1.4 * dpr);
+      }
     }
     requestAnimationFrame(draw);
   })(0);

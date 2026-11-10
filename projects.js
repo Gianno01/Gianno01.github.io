@@ -17,6 +17,7 @@
               { type: "vimeo",   id: "123456789" }
               { type: "figma",   src: "https://embed.figma.com/..." }  // prototipo navigabile
               { type: "model",   src: "assets/x/model.glb" }     // modello 3D ruotabile
+    role    il tuo ruolo           →  { it: "...", en: "..." }   ("N/D" se non ancora scritto)
     links   [{ label: "github", url: "https://..." }]
             label può essere tradotta: { it: "presentazione", en: "slides" }
     draft   true = nascosto dal sito
@@ -41,6 +42,9 @@ window.SITE = {
         "shoot and edit video, train neural networks and build worlds inside a headset. " +
         "I love research, and I love it when it actually works."
   },
+  docs: [
+    { label: { it: "scarica cv", en: "download cv" }, url: "assets/docs/cv-marco-giannone.pdf" }
+  ],
   contacts: [
     { label: "github",   url: "https://github.com/Gianno01" },
     { label: "linkedin", url: "https://www.linkedin.com/in/marcogiannone0" },
@@ -53,6 +57,7 @@ window.PROJECTS = [
   {
     date: "26-11-05",
     title: "AR_Previs",
+    role: { it: "ideazione e sviluppo (tesi)", en: "concept and development (thesis)" },
     tags: ["xr", "ml"],
     where: { it: "tesi + tirocinio · Rai CRITS", en: "master's thesis + internship · Rai CRITS" },
     text: {
@@ -60,12 +65,19 @@ window.PROJECTS = [
       en: "Set-design previs on Meta Quest: ask for an object by voice, AI generates an image and then a 3D model that appears in the scene and can be edited. Unity, Whisper, n8n, ComfyUI."
     },
     cover: "assets/ar-previs/cover.jpg",
-    media: [{ type: "video", src: "assets/ar-previs/reel.mp4" }],
+    media: [
+      { type: "video", src: "assets/ar-previs/reel.mp4" },
+      { type: "image", src: "assets/ar-previs/cover.jpg" },
+      { type: "image", src: "assets/ar-previs/still375.jpg" },
+      { type: "image", src: "assets/ar-previs/still690.jpg" },
+      { type: "image", src: "assets/ar-previs/still1030.jpg" }
+    ],
     links: [{ label: "github", url: "https://github.com/Gianno01/Real_time_3D_asset_synthesis_in_XR" }]
   },
   {
     date: "26-07-01", // ~
     title: "Unreal Engine - Technical Art",
+    role: { it: "N/D", en: "N/D" },
     tags: ["unreal", "3d", "vfx"],
     where: "Technical Art",
     text: {
@@ -76,6 +88,9 @@ window.PROJECTS = [
     media: [
       { type: "video", src: "assets/technical-art/cinematica.mp4" },
       { type: "video", src: "assets/technical-art/ambiente.mp4" },
+      { type: "image", src: "assets/technical-art/scena.jpg" },
+      { type: "image", src: "assets/technical-art/world-building.jpg" },
+      { type: "image", src: "assets/technical-art/storyboard.jpg" },
       { type: "video", src: "assets/technical-art/niagara.mp4" }
     ],
     links: [{ label: SLIDES, url: "https://canva.link/5chpwpxtofzv12m" }]
@@ -83,19 +98,27 @@ window.PROJECTS = [
   {
     date: "26-07-01", // ~
     title: "Unreal Engine - MetaHuman",
+    role: { it: "N/D", en: "N/D" },
     tags: ["unreal", "3d"],
     where: "Technical Art",
     text: {
       it: "Personaggi digitali con MetaHuman in Unreal.",
       en: "Digital characters with MetaHuman in Unreal."
     },
-    cover: "assets/metahuman/cover.jpg",
-    media: [{ type: "image", src: "assets/metahuman/cover.jpg" }],
+    cover: "assets/metahuman/marco.jpg",
+    media: [
+      { type: "image", src: "assets/metahuman/marco.jpg" },
+      { type: "image", src: "assets/metahuman/live-link.jpg" },
+      { type: "image", src: "assets/metahuman/cinematica.jpg" },
+      { type: "image", src: "assets/metahuman/facial-animation.jpg" },
+      { type: "image", src: "assets/metahuman/cover.jpg" }
+    ],
     links: [{ label: SLIDES, url: "https://canva.link/cd0ku5c6kljhw1g" }]
   },
   {
     date: "26-07-01", // ~
     title: "3D Scan From Reality",
+    role: { it: "N/D", en: "N/D" },
     tags: ["3d"],
     where: "Technical Art",
     text: {
@@ -105,13 +128,18 @@ window.PROJECTS = [
     cover: "assets/technical-art/gaussian-cover.jpg",
     media: [
       { type: "video", src: "assets/technical-art/gaussian-splat.mp4" },
-      { type: "video", src: "assets/technical-art/fotogrammetria.mp4" }
+      { type: "video", src: "assets/technical-art/fotogrammetria.mp4" },
+      { type: "image", src: "assets/scan/reality-scan.jpg" },
+      { type: "image", src: "assets/scan/fotogrammetria.jpg" },
+      { type: "image", src: "assets/scan/confronto-foto.jpg" },
+      { type: "image", src: "assets/scan/confronto-gs.jpg" }
     ],
     links: [{ label: SLIDES, url: "https://canva.link/qxbbzqp0s3360ff" }]
   },
   {
     date: "26-06-15", // ~
-    title: "LogoNet",
+    title: "Logo Few Shot Recognition",
+    role: { it: "N/D", en: "N/D" },
     tags: ["ml"],
     where: "Machine Learning for Vision and Multimedia",
     text: {
@@ -130,6 +158,7 @@ window.PROJECTS = [
   {
     date: "26-06-01", // ~
     title: "VFX",
+    role: { it: "N/D", en: "N/D" },
     tags: ["vfx", "film"],
     where: { it: "VFX e cinema di animazione", en: "VFX and animated film" },
     text: {
@@ -148,6 +177,7 @@ window.PROJECTS = [
   {
     date: "26-05-01", // ~
     title: "Déjà Vu",
+    role: { it: "N/D", en: "N/D" },
     tags: ["film", "3d"],
     where: { it: "pitch · stop motion", en: "pitch · stop motion" },
     text: {
@@ -158,6 +188,8 @@ window.PROJECTS = [
     media: [
       { type: "youtube", id: "Fky2J5eVuGk" },
       { type: "image", src: "assets/deja-vu/claymation.jpg" },
+      { type: "image", src: "assets/deja-vu/world.jpg" },
+      { type: "image", src: "assets/deja-vu/test.jpg" },
       { type: "image", src: "assets/deja-vu/mix.jpg" },
       { type: "image", src: "assets/deja-vu/compositing.jpg" }
     ],
@@ -166,6 +198,7 @@ window.PROJECTS = [
   {
     date: "26-02-01",
     title: "Upics: Vending Machine Concept",
+    role: { it: "UI, UX e comunicazione Polaroid – app – ESP32", en: "UI, UX and Polaroid – app – ESP32 communication" },
     tags: ["design"],
     where: "Digital Interaction Design",
     text: {
@@ -176,13 +209,15 @@ window.PROJECTS = [
     media: [
       { type: "figma", src: "https://embed.figma.com/proto/CsfDnqbVFN1CPyb3O6RMZM/Upics?node-id=12-160&starting-point-node-id=15%3A294&embed-host=share" },
       { type: "image", src: "assets/upics/schermate.jpg" },
+      { type: "image", src: "assets/upics/hardware.jpg" },
       { type: "image", src: "assets/upics/prototipo.jpg" }
     ],
-    links: [{ label: "figma", url: "https://www.figma.com/proto/CsfDnqbVFN1CPyb3O6RMZM/Upics?node-id=12-160&starting-point-node-id=15%3A294" }]
+    links: [{ label: "github", url: "https://github.com/Gianno01/UPics_app" }, { label: "figma", url: "https://www.figma.com/proto/CsfDnqbVFN1CPyb3O6RMZM/Upics?node-id=12-160&starting-point-node-id=15%3A294" }]
   },
   {
     date: "26-01-20", // ~
     title: "SunCoin",
+    role: { it: "N/D", en: "N/D" },
     tags: ["design"],
     where: "UX design",
     text: {
@@ -198,15 +233,18 @@ window.PROJECTS = [
   {
     date: "26-01-15",
     title: "Mutti Unfiltered",
+    role: { it: "idea creativa e strategia di comunicazione social", en: "creative concept and social media communication strategy" },
     tags: ["design"],
-    where: "Digital strategy",
+    where: { it: "Digital strategy · commissionato da Mutti", en: "Digital strategy · commissioned by Mutti" },
     text: {
-      it: "Proposta di strategia digitale per portare Mutti alla Gen Z: creator, UGC, vlog di filiera.",
-      en: "A digital strategy proposal to bring Mutti to Gen Z: creators, UGC, supply-chain vlogs."
+      it: "Progetto commissionato davvero da Mutti: una strategia digitale per portare il brand alla Gen Z, tra creator, UGC e vlog di filiera.",
+      en: "A real brief commissioned by Mutti: a digital strategy to bring the brand to Gen Z through creators, UGC and supply-chain vlogs."
     },
     cover: "assets/mutti/unfiltered.jpg",
     media: [
       { type: "image", src: "assets/mutti/cover.jpg" },
+      { type: "image", src: "assets/mutti/matrice.jpg" },
+      { type: "image", src: "assets/mutti/pilastri.jpg" },
       { type: "image", src: "assets/mutti/visual-identity.jpg" },
       { type: "image", src: "assets/mutti/unfiltered.jpg" }
     ],
@@ -215,6 +253,7 @@ window.PROJECTS = [
   {
     date: "26-01-10", // ~
     title: "Chaos Between Us: A VR Experience",
+    role: { it: "sviluppatore", en: "developer" },
     tags: ["xr"],
     where: { it: "Realtà virtuale e aumentata", en: "Virtual and augmented reality" },
     text: {
@@ -224,12 +263,14 @@ window.PROJECTS = [
     media: [{ type: "youtube", id: "8mVPTMjnibQ" }],
     links: [
       { label: "itch.io", url: "https://mgiannone.itch.io/chaos-between-us" },
+      { label: "github", url: "https://github.com/Gianno01/RV_2025-2026" },
       { label: "youtube", url: "https://youtu.be/8mVPTMjnibQ" }
     ]
   },
   {
     date: "26-01-10", // ~
     title: "Risonanze",
+    role: { it: "sceneggiatura e presa diretta audio", en: "screenplay and on-set sound recording" },
     tags: ["xr", "film"],
     where: { it: "Cinema immersivo", en: "Immersive cinema" },
     text: {
@@ -242,6 +283,7 @@ window.PROJECTS = [
   {
     date: "26-01-05", // ~
     title: "AI & Lavoro",
+    role: { it: "N/D", en: "N/D" },
     tags: ["research"],
     where: { it: "Social media · analisi dei grafi", en: "Social media · graph analysis" },
     text: {
@@ -249,12 +291,17 @@ window.PROJECTS = [
       en: "Social listening, web scraping and graph theory on AI-and-work narratives on X and TikTok: replacement, transhumanism, conspiracy."
     },
     cover: "assets/social/cover.jpg",
-    media: [{ type: "image", src: "assets/social/cover.jpg" }],
+    media: [
+      { type: "image", src: "assets/social/cover.jpg" },
+      { type: "image", src: "assets/social/network.jpg" },
+      { type: "image", src: "assets/social/cotag.jpg" }
+    ],
     links: [{ label: SLIDES, url: "https://canva.link/64ajczv8xfzzvud" }]
   },
   {
     date: "25-06-15", // ~
     title: "A McDonald's Spot In Blender",
+    role: { it: "modellazione e animazione 3D di gran parte dello spot", en: "3D modelling and animation of most of the commercial" },
     tags: ["3d"],
     where: "Computer animation",
     text: {
@@ -263,11 +310,12 @@ window.PROJECTS = [
     },
     cover: "assets/computer-animation/cover.jpg",
     media: [{ type: "youtube", id: "rIYmD2on4WE" }],
-    links: [{ label: "youtube", url: "https://www.youtube.com/watch?v=rIYmD2on4WE" }]
+    links: [{ label: "youtube", url: "https://youtu.be/VPZMwga4-bY" }]
   },
   {
     date: "25-06-10", // ~
     title: "Sottek Hearing Model",
+    role: { it: "N/D", en: "N/D" },
     tags: ["research"],
     where: { it: "Ingegneria del suono", en: "Sound engineering" },
     text: {
@@ -275,18 +323,27 @@ window.PROJECTS = [
       en: "Psychoacoustic evaluations for the automotive industry with the Sottek hearing model."
     },
     cover: "assets/suono/cover.jpg",
-    media: [{ type: "image", src: "assets/suono/cover.jpg" }],
+    media: [
+      { type: "image", src: "assets/suono/cover.jpg" },
+      { type: "image", src: "assets/suono/algoritmo.jpg" },
+      { type: "image", src: "assets/suono/hsa.jpg" }
+    ],
     links: [{ label: SLIDES, url: "https://canva.link/6rhzxc91xb8c1cc" }]
   },
   {
     date: "24-10-01", // ~
     title: "A New Machine Learning Classifier For Recognizing K-Complexes",
+    role: { it: "autore", en: "author" },
     tags: ["ml", "research"],
     where: { it: "Laurea in Informatica · Dip. di Matematica, UniTo", en: "BSc Computer Science · Mathematics Dept., UniTo" },
     text: {
       it: "Un nuovo classificatore di machine learning per riconoscere i complessi K nei tracciati EEG del sonno: prestazioni e scelta dei parametri liberi.",
       en: "A new machine learning classifier to detect K-complexes in sleep EEG recordings: performance and choice of free parameters."
     },
-    links: []
+    media: [
+      { type: "image", src: "assets/tesi/fig39.jpg" },
+      { type: "image", src: "assets/tesi/fig47.jpg" }
+    ],
+    links: [{ label: { it: "scarica la tesi (pdf)", en: "download thesis (pdf)" }, url: "assets/docs/tesi-triennale-marco-giannone.pdf", download: true }]
   }
 ];

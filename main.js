@@ -12,7 +12,9 @@
   const UI = {
     about: { it: "about", en: "about" },
     role:  { it: "ruolo", en: "role" },
-    all:   { it: "tutti", en: "all" }
+    all:   { it: "tutti", en: "all" },
+    light: { it: "chiaro", en: "light" },
+    dark:  { it: "scuro", en: "dark" }
   };
 
   /* ── header / footer ─────────────────── */
@@ -26,6 +28,25 @@
     if (!c.url.startsWith("mailto")) { a.target = "_blank"; a.rel = "noopener"; }
     $("#contacts").append(a);
   });
+
+  const themeBtn = $("#theme");
+  const theme = () => document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  function paintTheme() {
+    const th = theme();
+    themeBtn.innerHTML = `<span class="${th === "light" ? "on" : ""}">${t(UI.light)}</span> / <span class="${th === "dark" ? "on" : ""}">${t(UI.dark)}</span>`;
+    readColors();
+  }
+  themeBtn.addEventListener("click", () => {
+    document.documentElement.dataset.theme = theme() === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme", theme()); } catch (e) {}
+    paintTheme();
+  });
+  let FG = "236,235,230", AC = "215,255,58";
+  function readColors() {
+    const cs = getComputedStyle(document.documentElement);
+    FG = cs.getPropertyValue("--fg-rgb").trim() || FG;
+    AC = cs.getPropertyValue("--accent-rgb").trim() || AC;
+  }
 
   const langBtn = $("#lang");
   langBtn.addEventListener("click", () => {
@@ -43,6 +64,7 @@
 
   function render() {
     document.documentElement.lang = lang;
+    paintTheme();
     langBtn.innerHTML = `<span class="${lang === "it" ? "on" : ""}">it</span> / <span class="${lang === "en" ? "on" : ""}">en</span>`;
     langBtn.setAttribute("aria-label", lang === "it" ? "Switch to English" : "Passa all'italiano");
     $("#site-role").textContent = t(S.role);
@@ -216,7 +238,7 @@
         const [x, y, d] = proj(u, ang, jx, jy);
         const a = .14 + .6 * (1 - (d + 1) / 2);
         const sz = (1.1 + (1 - d) * .8) * dpr;
-        ctx.fillStyle = rnd > .985 ? `rgba(215,255,58,${a + .2})` : `rgba(236,235,230,${a})`;
+        ctx.fillStyle = rnd > .985 ? `rgba(${AC},${a + .2})` : `rgba(${FG},${a})`;
         ctx.fillRect(x, y, sz, sz);
       }
     }
@@ -228,7 +250,7 @@
       const n = 18;
       for (let j = 1; j < n; j++) {
         const q = j / n, x = A[0] + (B[0] - A[0]) * q, y = A[1] + (B[1] - A[1]) * q;
-        ctx.fillStyle = pairCol[k] && (q < .5) ? `rgba(215,255,58,${a + .15})` : `rgba(236,235,230,${a})`;
+        ctx.fillStyle = pairCol[k] && (q < .5) ? `rgba(${AC},${a + .15})` : `rgba(${FG},${a})`;
         ctx.fillRect(x, y, 1.4 * dpr, 1.4 * dpr);
       }
     }

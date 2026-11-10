@@ -1,16 +1,36 @@
 :root {
-  --bg: #0a0a0a;
-  --fg: #ecebe6;
-  --mute: #6f6e69;
-  --line: #1f1f1d;
-  --accent: #d7ff3a;
+  /* light (default) */
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --fg-rgb: 10,10,10;
+  --mute: #8b8a85;
+  --line: #e7e6e2;
+  --soft: #3a3a38;
+  --panel: #f2f1ed;
+  --accent: #1d39ff;
+  --accent-rgb: 29,57,255;
+  --on-accent: #ffffff;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --sans: "Inter Tight", system-ui, sans-serif;
   --pad: clamp(18px, 4vw, 56px);
 }
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --fg: #ecebe6;
+  --fg-rgb: 236,235,230;
+  --mute: #6f6e69;
+  --line: #1f1f1d;
+  --soft: #bdbcb6;
+  --panel: #111111;
+  --accent: #d7ff3a;
+  --accent-rgb: 215,255,58;
+  --on-accent: #0a0a0a;
+}
+html, body { transition: background-color .3s, color .3s; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: var(--bg); color: var(--fg); }
+body { background: var(--bg); }
 body {
   font-family: var(--sans);
   min-height: 100vh;
@@ -30,11 +50,26 @@ a { color: inherit; text-decoration: none; }
 .top, .feed, .bottom, .about-top, .filters { position: relative; z-index: 2; padding-inline: var(--pad); }
 
 /* ── header ───────────────────────────── */
-.lang {
-  all: unset; cursor: pointer;
+.switches {
   position: absolute; top: var(--pad); right: var(--pad);
+  display: flex; gap: 22px; z-index: 3;
+}
+.lang, .theme {
+  all: unset; cursor: pointer;
   font-family: var(--mono); font-size: 12px; color: var(--mute);
 }
+.theme .on { color: var(--accent); }
+.theme:hover { color: var(--fg); }
+.theme:focus-visible { outline: 1px dashed var(--accent); outline-offset: 4px; }
+.hero { display: flex; align-items: center; gap: clamp(16px, 3vw, 48px); }
+#moon {
+  flex: 0 0 auto;
+  width: clamp(110px, 17vw, 300px);
+  aspect-ratio: 1;
+  cursor: grab; touch-action: none;
+}
+#moon:active { cursor: grabbing; }
+@media (max-width: 640px) { #moon { width: 92px; align-self: flex-start; margin-top: 8px; } }
 .lang .on { color: var(--accent); }
 .lang:hover { color: var(--fg); }
 .lang:focus-visible { outline: 1px dashed var(--accent); outline-offset: 4px; }
@@ -52,7 +87,6 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--mono);
   font-size: 12px;
   color: var(--mute);
-  text-transform: lowercase;
 }
 .filters { padding-inline: var(--pad); padding-bottom: 18px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .filters button {
@@ -102,7 +136,7 @@ a { color: inherit; text-decoration: none; }
   gap: 16px;
   padding: 4px 0 34px;
 }
-.detail-text { max-width: 60ch; font-size: 15px; line-height: 1.55; color: #bdbcb6; }
+.detail-text { max-width: 60ch; font-size: 15px; line-height: 1.55; color: var(--soft); }
 .tags { margin-top: 10px; font-family: var(--mono); font-size: 11px; color: var(--mute); }
 .links { margin-top: 14px; display: flex; gap: 16px; font-family: var(--mono); font-size: 12px; }
 .links a { border-bottom: 1px solid var(--mute); }
@@ -120,13 +154,13 @@ a { color: inherit; text-decoration: none; }
   height: min(56vh, 460px);
   max-width: 88vw;
   scroll-snap-align: start;
-  background: #111;
+  background: var(--panel);
   border: 0;
 }
 .media img, .media video { width: auto; object-fit: cover; }
 .media iframe { aspect-ratio: 16/9; height: min(56vh, 460px); }
 .media iframe.figma { background: #fff; }
-.media model-viewer { aspect-ratio: 1; --poster-color: transparent; background: radial-gradient(#1a1a18, #0d0d0c); }
+.media model-viewer { aspect-ratio: 1; --poster-color: transparent; background: radial-gradient(var(--panel), var(--bg)); }
 
 /* hover preview that follows the cursor */
 .peek {
@@ -149,8 +183,8 @@ a { color: inherit; text-decoration: none; }
 /* ── footer ───────────────────────────── */
 .bottom { padding-top: 12vh; padding-bottom: var(--pad); }
 .docs { margin-top: 18px; display: flex; gap: 18px; font-family: var(--mono); font-size: 12px; }
-.docs a { color: var(--bg); background: var(--accent); padding: 6px 10px; }
-.docs a:hover { background: var(--fg); }
+.docs a { color: var(--on-accent); background: var(--accent); padding: 6px 10px; }
+.docs a:hover { background: var(--fg); color: var(--bg); }
 .about-top { padding-inline: var(--pad); padding-bottom: 8vh; }
 .prole { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--fg); }
 .prole b { font-weight: 400; color: var(--mute); }

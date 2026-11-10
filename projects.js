@@ -29,16 +29,16 @@
 const SLIDES = { it: "presentazione", en: "slides" };
 
 window.SITE = {
-  name: "marco giannone.",
+  name: "Marco Giannone.",
   role: {
-    it: "informatico · ingegneria del cinema e dei media · xr · technical art · computer vision",
-    en: "computer scientist · cinema & media engineering · xr · technical art · computer vision"
+    it: "Computer Scientist · Cinema & Media engineer · XR Developer · Computer Graphics · Computer Vision · Technical art",
+    en: "Computer Scientist · Cinema & Media engineer · XR Developer · Computer Graphics · Computer Vision · Technical art"
   },
   manifesto: {
-    it: "Informatico, quasi ingegnere del cinema. Scrivo codice, faccio grafica, " +
+    it: "Computer scientist, quasi ingegnere dei media e del cinema. Scrivo codice, disegno interfacce, " +
         "giro e monto video, alleno reti neurali e costruisco mondi in un visore. " +
         "Mi piace la ricerca, e mi piace quando funziona davvero.",
-    en: "Computer scientist, almost a cinema engineer. I write code, make graphics, " +
+    en: "Computer scientist, almost a media and cinema engineer. I write code, design interfaces, " +
         "shoot and edit video, train neural networks and build worlds inside a headset. " +
         "I love research, and I love it when it actually works."
   },
@@ -47,7 +47,7 @@ window.SITE = {
   ],
   contacts: [
     { label: "github",   url: "https://github.com/Gianno01" },
-    { label: "linkedin", url: "https://www.linkedin.com/in/marcogiannone0" },
+    { label: "linkedin", url: "https://www.linkedin.com/in/marco-giannone0" },
     { label: "itch.io",  url: "https://mgiannone.itch.io" },
     { label: "email",    url: "mailto:marco.giannone10@hotmail.it" }
   ]
@@ -56,13 +56,13 @@ window.SITE = {
 window.PROJECTS = [
   {
     date: "26-11-05",
-    title: "AR_Previs",
-    role: { it: "ideazione e sviluppo (tesi)", en: "concept and development (thesis)" },
+    title: "3D Real-Time Synthesis in XR",
+    role: { it: "Generative AI Engineer, XR Developer", en: "Generative AI Engineer, XR Developer" },
     tags: ["xr", "ml"],
     where: { it: "tesi + tirocinio · Rai CRITS", en: "master's thesis + internship · Rai CRITS" },
     text: {
-      it: "Previs scenografica su Meta Quest: chiedi un oggetto a voce, l'AI genera l'immagine e poi il modello 3D, che compare in scena e si modifica. Unity, Whisper, n8n, ComfyUI.",
-      en: "Set-design previs on Meta Quest: ask for an object by voice, AI generates an image and then a 3D model that appears in the scene and can be edited. Unity, Whisper, n8n, ComfyUI."
+      it: "Pre-Visualizzazione su Meta Quest: chiedi un oggetto a voce, l'AI genera l'immagine e poi il modello 3D, che compare in scena e si modifica. Unity, Whisper, n8n, ComfyUI.",
+      en: "Pre-visualisation on Meta Quest: ask for an object by voice, AI generates an image and then a 3D model that appears in the scene and can be edited. Unity, Whisper, n8n, ComfyUI."
     },
     cover: "assets/ar-previs/cover.jpg",
     media: [
@@ -77,7 +77,7 @@ window.PROJECTS = [
   {
     date: "26-07-01", // ~
     title: "Unreal Engine - Technical Art",
-    role: { it: "N/D", en: "N/D" },
+    role: { it: "Unreal Engine Developer", en: "Unreal Engine Developer" },
     tags: ["unreal", "3d", "vfx"],
     where: "Technical Art",
     text: {
@@ -98,12 +98,12 @@ window.PROJECTS = [
   {
     date: "26-07-01", // ~
     title: "Unreal Engine - MetaHuman",
-    role: { it: "N/D", en: "N/D" },
+    role: { it: "Unreal Engine Developer", en: "Unreal Engine Developer"},
     tags: ["unreal", "3d"],
     where: "Technical Art",
     text: {
-      it: "Personaggi digitali con MetaHuman in Unreal.",
-      en: "Digital characters with MetaHuman in Unreal."
+      it: "Personaggi digitali e gemelli digitali con MetaHuman in Unreal.",
+      en: "Digital characters and digital twins with MetaHuman in Unreal."
     },
     cover: "assets/metahuman/marco.jpg",
     media: [
@@ -118,7 +118,7 @@ window.PROJECTS = [
   {
     date: "26-07-01", // ~
     title: "3D Scan From Reality",
-    role: { it: "N/D", en: "N/D" },
+    role: { it: "Developer", en: "Developer" },
     tags: ["3d"],
     where: "Technical Art",
     text: {
@@ -139,8 +139,8 @@ window.PROJECTS = [
   {
     date: "26-06-15", // ~
     title: "Logo Few Shot Recognition",
-    role: { it: "N/D", en: "N/D" },
-    tags: ["ml"],
+    role: { it: "Developer", en: "Developer" },
+    tags: ["ml", "vision"],
     where: "Machine Learning for Vision and Multimedia",
     text: {
       it: "Few-shot logo retrieval con rete siamese ResNet-50 e triplet loss: riconosce brand mai visti in training. LogoDet-3K → FlickrLogos-32.",
@@ -158,7 +158,7 @@ window.PROJECTS = [
   {
     date: "26-06-01", // ~
     title: "VFX",
-    role: { it: "N/D", en: "N/D" },
+    role: { it: "CG Engineer", en: "CG Engineer" },
     tags: ["vfx", "film"],
     where: { it: "VFX e cinema di animazione", en: "VFX and animated film" },
     text: {
@@ -177,9 +177,9 @@ window.PROJECTS = [
   {
     date: "26-05-01", // ~
     title: "Déjà Vu",
-    role: { it: "N/D", en: "N/D" },
+    role: { it: "Concept, animazione, maker", en: "Concept, animation, maker" },
     tags: ["film", "3d"],
-    where: { it: "pitch · stop motion", en: "pitch · stop motion" },
+    where: { it: "Character Animation", en: "Character Animation" },
     text: {
       it: "Pitch per una miniserie in tecnica mista: live action e Moko, un alieno in claymation. Pre-produzione, puppet, compositing.",
       en: "Pitch for a mixed-media mini-series: live action and Moko, a claymation alien. Pre-production, puppets, compositing."
@@ -202,8 +202,8 @@ window.PROJECTS = [
     tags: ["design"],
     where: "Digital Interaction Design",
     text: {
-      it: "Una stazione di stampa istantanea in stile Polaroid, con la sua app. Ho curato UI, UX e la comunicazione tra Polaroid, app ed ESP32.",
-      en: "A Polaroid-style instant print station with its own app. I handled UI, UX and the communication between Polaroid, app and ESP32."
+      it: "Una stazione di stampa istantanea in stile Polaroid, con la sua app sviluppata con Arduino. Ho curato UI, UX e la comunicazione tra Polaroid, app ed ESP32.",
+      en: "A Polaroid-style instant print station with its own app developed with Arduino. I handled UI, UX and the communication between Polaroid, app and ESP32."
     },
     cover: "assets/upics/prototipo.jpg",
     media: [
@@ -217,8 +217,8 @@ window.PROJECTS = [
   {
     date: "26-01-20", // ~
     title: "SunCoin",
-    role: { it: "N/D", en: "N/D" },
-    tags: ["design"],
+    role: { it: "UI, UX, concept", en: "UI, UX, concept" },
+    tags: ["design", "gamification"],
     where: "UX design",
     text: {
       it: "App che trasforma la gestione dell'energia solare in un gioco: missioni, quiz e sfide per usare meglio il fotovoltaico.",
@@ -233,12 +233,12 @@ window.PROJECTS = [
   {
     date: "26-01-15",
     title: "Mutti Unfiltered",
-    role: { it: "idea creativa e strategia di comunicazione social", en: "creative concept and social media communication strategy" },
+    role: { it: "Autore: idea creativa e strategia di comunicazione social", en: "Author: creative concept and social media communication strategy" },
     tags: ["design"],
     where: { it: "Digital strategy · commissionato da Mutti", en: "Digital strategy · commissioned by Mutti" },
     text: {
-      it: "Progetto commissionato davvero da Mutti: una strategia digitale per portare il brand alla Gen Z, tra creator, UGC e vlog di filiera.",
-      en: "A real brief commissioned by Mutti: a digital strategy to bring the brand to Gen Z through creators, UGC and supply-chain vlogs."
+      it: "Progetto realmente commissionato dalla divisione Corporate di Mutti: una strategia digitale per portare il brand alla Gen Z, tra creator, UGC e vlog di filiera.",
+      en: "A real brief commissioned by Mutti's Corporate division: a digital strategy to bring the brand to Gen Z through creators, UGC and supply-chain vlogs."
     },
     cover: "assets/mutti/unfiltered.jpg",
     media: [
@@ -253,12 +253,12 @@ window.PROJECTS = [
   {
     date: "26-01-10", // ~
     title: "Chaos Between Us: A VR Experience",
-    role: { it: "sviluppatore", en: "developer" },
-    tags: ["xr"],
+    role: { it: "VR Developer", en: "VR Developer" },
+    tags: ["xr", "vr"],
     where: { it: "Realtà virtuale e aumentata", en: "Virtual and augmented reality" },
     text: {
-      it: "Un'esperienza in realtà virtuale sviluppata in Unity (C#). Ruolo: sviluppatore.",
-      en: "A virtual reality experience built in Unity (C#). Role: developer."
+      it: "Un'esperienza in realtà virtuale sviluppata in Unity (C#) nell'ambito del corso di Realtà Virtuale.",
+      en: "A virtual reality experience built in Unity (C#) for the Virtual Reality course."
     },
     media: [{ type: "youtube", id: "8mVPTMjnibQ" }],
     links: [
@@ -269,8 +269,8 @@ window.PROJECTS = [
   },
   {
     date: "26-01-10", // ~
-    title: "Risonanze",
-    role: { it: "sceneggiatura e presa diretta audio", en: "screenplay and on-set sound recording" },
+    title: "Risonanze: A Musical XR Experience",
+    role: { it: "Sceneggiatura e presa diretta audio", en: "Screenplay and on-set sound recording" },
     tags: ["xr", "film"],
     where: { it: "Cinema immersivo", en: "Immersive cinema" },
     text: {
@@ -282,8 +282,8 @@ window.PROJECTS = [
   },
   {
     date: "26-01-05", // ~
-    title: "AI & Lavoro",
-    role: { it: "N/D", en: "N/D" },
+    title: "AI & Lavoro: Social Listening Su X E Analisi Dei Grafi",
+    role: { it: "Co-Autore", en: "Co-Author" },
     tags: ["research"],
     where: { it: "Social media · analisi dei grafi", en: "Social media · graph analysis" },
     text: {
@@ -301,12 +301,12 @@ window.PROJECTS = [
   {
     date: "25-06-15", // ~
     title: "A McDonald's Spot In Blender",
-    role: { it: "modellazione e animazione 3D di gran parte dello spot", en: "3D modelling and animation of most of the commercial" },
+    role: { it: "Modellazione, rig e animazione 3D di una parte dello spot", en: "3D modelling, rigging and animation of part of the commercial" },
     tags: ["3d"],
     where: "Computer animation",
     text: {
-      it: "Ho modellato e animato in 3D gran parte di uno spot in Blender.",
-      en: "I modelled and animated most of a 3D commercial in Blender."
+      it: "Ho modellato, riggato e animato in 3D una parte di uno spot in Blender.",
+      en: "I modelled, rigged and animated part of a 3D commercial in Blender."
     },
     cover: "assets/computer-animation/cover.jpg",
     media: [{ type: "youtube", id: "rIYmD2on4WE" }],
@@ -315,7 +315,7 @@ window.PROJECTS = [
   {
     date: "25-06-10", // ~
     title: "Sottek Hearing Model",
-    role: { it: "N/D", en: "N/D" },
+    role: { it: "Co-Autore", en: "Co-Author" },
     tags: ["research"],
     where: { it: "Ingegneria del suono", en: "Sound engineering" },
     text: {
@@ -333,12 +333,12 @@ window.PROJECTS = [
   {
     date: "24-10-01", // ~
     title: "A New Machine Learning Classifier For Recognizing K-Complexes",
-    role: { it: "autore", en: "author" },
+    role: { it: "Autore", en: "Author" },
     tags: ["ml", "research"],
     where: { it: "Laurea in Informatica · Dip. di Matematica, UniTo", en: "BSc Computer Science · Mathematics Dept., UniTo" },
     text: {
-      it: "Un nuovo classificatore di machine learning per riconoscere i complessi K nei tracciati EEG del sonno: prestazioni e scelta dei parametri liberi.",
-      en: "A new machine learning classifier to detect K-complexes in sleep EEG recordings: performance and choice of free parameters."
+      it: "Un nuovo classificatore di machine learning in R per riconoscere i complessi K nei tracciati EEG del sonno: prestazioni e scelta dei parametri liberi.",
+      en: "A new machine learning classifier in R to detect K-complexes in sleep EEG recordings: performance and choice of free parameters."
     },
     media: [
       { type: "image", src: "assets/tesi/fig39.jpg" },

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <canvas id="bg" aria-hidden="true"></canvas>
 
   <header class="top">
-    <button class="lang" id="lang" type="button"></button>
-    <a href="./" class="name" id="site-name"></a>
+    <div class="switches">
+      <button class="theme" id="theme" type="button"></button>
+      <button class="lang" id="lang" type="button"></button>
+    </div>
+    <div class="hero">
+      <a href="./" class="name" id="site-name"></a>
+      <canvas id="moon" aria-label="luna" role="img"></canvas>
+    </div>
     <p class="role" id="site-role"></p>
     <p class="docs" id="docs"></p>
   </header>
@@ -40,5 +47,7 @@
 
   <script src="projects.js"></script>
   <script src="main.js"></script>
+  <script src="assets/moon/texture.js"></script>
+  <script src="moon.js"></script>
 </body>
 </html>

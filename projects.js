@@ -55,7 +55,7 @@ window.SITE = {
 
 window.PROJECTS = [
   {
-    date: "26-11-05",
+    date: "26-11-01",
     title: "3D Real-Time Synthesis in XR",
     role: { it: "Generative AI Engineer, XR Developer", en: "Generative AI Engineer, XR Developer" },
     tags: ["xr", "ml"],
@@ -137,7 +137,7 @@ window.PROJECTS = [
     links: [{ label: SLIDES, url: "https://canva.link/qxbbzqp0s3360ff" }]
   },
   {
-    date: "26-06-15", // ~
+    date: "26-03-01", // ~
     title: "Logo Few Shot Recognition",
     role: { it: "Developer", en: "Developer" },
     tags: ["ml", "vision"],
@@ -175,7 +175,7 @@ window.PROJECTS = [
     links: [{ label: "youtube", url: "https://youtu.be/F7LtGlq_HfE" }]
   },
   {
-    date: "26-05-01", // ~
+    date: "26-12-01", // ~
     title: "Déjà Vu",
     role: { it: "Concept, animazione, maker", en: "Concept, animation, maker" },
     tags: ["film", "3d"],
@@ -215,7 +215,7 @@ window.PROJECTS = [
     links: [{ label: "github", url: "https://github.com/Gianno01/UPics_app" }, { label: "figma", url: "https://www.figma.com/proto/CsfDnqbVFN1CPyb3O6RMZM/Upics?node-id=12-160&starting-point-node-id=15%3A294" }]
   },
   {
-    date: "26-01-20", // ~
+    date: "25-07-01", // ~
     title: "SunCoin",
     role: { it: "UI, UX, concept", en: "UI, UX, concept" },
     tags: ["design", "gamification"],
@@ -251,7 +251,7 @@ window.PROJECTS = [
     links: [{ label: SLIDES, url: "https://canva.link/xu6d23t5vjauxia" }]
   },
   {
-    date: "26-01-10", // ~
+    date: "26-03-01", // ~
     title: "Chaos Between Us: A VR Experience",
     role: { it: "VR Developer", en: "VR Developer" },
     tags: ["xr", "vr"],
@@ -268,7 +268,7 @@ window.PROJECTS = [
     ]
   },
   {
-    date: "26-01-10", // ~
+    date: "26-01-01", // ~
     title: "Risonanze: A Musical XR Experience",
     role: { it: "Sceneggiatura e presa diretta audio", en: "Screenplay and on-set sound recording" },
     tags: ["xr", "film"],
@@ -281,7 +281,7 @@ window.PROJECTS = [
     links: [{ label: "youtube", url: "https://youtu.be/oAJdwwZye1o" }]
   },
   {
-    date: "26-01-05", // ~
+    date: "25-12-01", // ~
     title: "AI & Lavoro: Social Listening Su X E Analisi Dei Grafi",
     role: { it: "Co-Autore", en: "Co-Author" },
     tags: ["research"],

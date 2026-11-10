@@ -13,8 +13,8 @@
     about: { it: "about", en: "about" },
     role:  { it: "ruolo", en: "role" },
     all:   { it: "tutti", en: "all" },
-    light: { it: "chiaro", en: "light" },
-    dark:  { it: "scuro", en: "dark" }
+    light: { it: "light", en: "light" },
+    dark:  { it: "dark", en: "dark" }
   };
 
   /* ── header / footer ─────────────────── */

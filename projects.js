@@ -12,7 +12,8 @@
     cover   immagine mostrata al passaggio del mouse (opzionale)
     media   cosa si apre al click (opzionale), uno o più di:
               { type: "image",   src: "assets/x/1.jpg" }
-              { type: "video",   src: "assets/x/clip.mp4" }      // file leggero (<20 MB)
+              { type: "video",   src: "assets/x/clip.mp4" }      // file leggero (<20 MB), parte da solo senza audio
+              { type: "video",   src: "assets/x/film.mp4", poster: "assets/x/p.jpg", sound: true }  // con audio, parte al click
               { type: "youtube", id: "dQw4w9WgXcQ" }             // l'id è la parte dopo youtu.be/
               { type: "vimeo",   id: "123456789" }
               { type: "figma",   src: "https://embed.figma.com/..." }  // prototipo navigabile
@@ -35,12 +36,12 @@ window.SITE = {
     en: "Computer Scientist · Cinema & Media engineer · XR Developer · Computer Graphics · Computer Vision · Technical art"
   },
   manifesto: {
-    it: "Computer scientist, quasi ingegnere dei media e del cinema. Scrivo codice, disegno interfacce, " +
-        "giro e monto video, alleno reti neurali e costruisco mondi in un visore. " +
-        "Mi piace la ricerca, e mi piace quando funziona davvero.",
-    en: "Computer scientist, almost a media and cinema engineer. I write code, design interfaces, " +
-        "shoot and edit video, train neural networks and build worlds inside a headset. " +
-        "I love research, and I love it when it actually works."
+    it: "Computer scientist, quasi Ingegnere dei Media e del Cinema. Scrivo Codice, disegno Interfacce, " +
+        "opzionalmente alleno reti neurali e costruisco mondi in un visore. A volte giro e monto video." +
+        "Mi piace fare ricerca, studiare nuove tecnologie, e farle funzionare.",
+    en: "Computer scientist, nearly a Media and Film Engineer. I write code, design interfaces," +
+        "occasionally, train neural networks and build worlds within a VR headset. Sometimes shoot and edit videos—and" +
+        "I enjoy conducting research, studying new technologies, and making them work."
   },
   docs: [
     { label: { it: "scarica cv", en: "download cv" }, url: "assets/docs/cv-marco-giannone.pdf" }
@@ -162,12 +163,14 @@ window.PROJECTS = [
     tags: ["vfx", "film"],
     where: { it: "VFX e cinema di animazione", en: "VFX and animated film" },
     text: {
-      it: "Il progetto finale, più compositing e camera tracking in Nuke, motion graphics in After Effects, simulazioni in Houdini.",
-      en: "The final project, plus compositing and camera tracking in Nuke, motion graphics in After Effects, simulations in Houdini."
+      it: "Il progetto finale, più compositing e camera tracking in Nuke, motion graphics in After Effects ed esercitazioni sui sistemi particellari in Houdini.",
+      en: "The final project, plus compositing and camera tracking in Nuke, motion graphics in After Effects and particle-system exercises in Houdini."
     },
     cover: "assets/vfx/cover.jpg",
     media: [
       { type: "youtube", id: "F7LtGlq_HfE" },
+      { type: "video", src: "assets/vfx/houdini-particles-1.mp4" },
+      { type: "video", src: "assets/vfx/houdini-particles-2.mp4" },
       { type: "video", src: "assets/vfx/nuke-compositing.mp4" },
       { type: "video", src: "assets/vfx/nuke-camera-track.mp4" },
       { type: "video", src: "assets/vfx/after-effects.mp4" }
@@ -271,6 +274,7 @@ window.PROJECTS = [
     date: "26-01-01", // ~
     title: "Risonanze: A Musical XR Experience",
     role: { it: "Sceneggiatura e presa diretta audio", en: "Screenplay and on-set sound recording" },
+    egg: { youtube: "XEUcYnDQ6ok", after: 3 },   // easter egg: apri e chiudi 3 volte
     tags: ["xr", "film"],
     where: { it: "Cinema immersivo", en: "Immersive cinema" },
     text: {
@@ -309,7 +313,7 @@ window.PROJECTS = [
       en: "I modelled, rigged and animated part of a 3D commercial in Blender."
     },
     cover: "assets/computer-animation/cover.jpg",
-    media: [{ type: "youtube", id: "rIYmD2on4WE" }],
+    media: [{ type: "video", src: "assets/computer-animation/spot.mp4", poster: "assets/computer-animation/poster.jpg", sound: true }],
     links: [{ label: "youtube", url: "https://youtu.be/VPZMwga4-bY" }]
   },
   {

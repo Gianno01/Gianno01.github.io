@@ -121,11 +121,32 @@
       if (o && !built) { buildMedia(p, media); built = true; }
       return o;
     };
-    row.addEventListener("click", () => { if (toggle()) history.replaceState(null, "", "#" + item.id); });
+    row.addEventListener("click", () => {
+      if (toggle()) { history.replaceState(null, "", "#" + item.id); return; }
+      if (p.egg) {                                     // closed: count towards the easter egg
+        const n = (eggCount.get(item.id) || 0) + 1;
+        eggCount.set(item.id, n);
+        if (n >= (p.egg.after || 3)) { eggCount.set(item.id, 0); openEgg(p.egg); }
+      }
+    });
     row.addEventListener("mouseenter", () => showPeek(p));
     row.addEventListener("mouseleave", hidePeek);
     if (isOpen) toggle(true);
     return item;
+  }
+
+  /* ── easter egg ──────────────────────── */
+  const eggCount = new Map();
+  function openEgg(egg) {
+    const ov = el("div", "egg");
+    ov.innerHTML = `<button class="egg-close" aria-label="close">×</button>`;
+    const f = frame(`https://www.youtube-nocookie.com/embed/${egg.youtube}?autoplay=1`, "autoplay; fullscreen; picture-in-picture");
+    ov.append(f);
+    const close = () => { ov.remove(); removeEventListener("keydown", esc); };
+    const esc = e => { if (e.key === "Escape") close(); };
+    ov.addEventListener("click", e => { if (e.target === ov || e.target.classList.contains("egg-close")) close(); });
+    addEventListener("keydown", esc);
+    document.body.append(ov);
   }
 
   /* ── media ───────────────────────────── */
@@ -139,7 +160,12 @@
     list.forEach(m => {
       let n;
       if (m.type === "image") { n = el("img"); n.src = m.src; n.alt = p.title; n.loading = "lazy"; }
-      else if (m.type === "video") { n = el("video"); Object.assign(n, { src: m.src, muted: true, loop: true, autoplay: true, playsInline: true, controls: true }); }
+      else if (m.type === "video") {
+        n = el("video");
+        if (m.sound) Object.assign(n, { src: m.src, controls: true, playsInline: true, preload: "metadata" });
+        else Object.assign(n, { src: m.src, muted: true, loop: true, autoplay: true, playsInline: true, controls: true });
+        if (m.poster) n.poster = m.poster;
+      }
       else if (m.type === "youtube") n = frame(`https://www.youtube-nocookie.com/embed/${m.id}`, "autoplay; fullscreen; picture-in-picture");
       else if (m.type === "vimeo") n = frame(`https://player.vimeo.com/video/${m.id}`, "autoplay; fullscreen");
       else if (m.type === "figma") { n = frame(m.src, "fullscreen"); n.className = "figma"; }

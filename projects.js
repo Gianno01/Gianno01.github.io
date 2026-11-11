@@ -59,7 +59,7 @@ window.PROJECTS = [
     date: "26-11-01",
     title: "3D Real-Time Synthesis in XR",
     role: { it: "Generative AI Engineer, XR Developer", en: "Generative AI Engineer, XR Developer" },
-    tags: ["xr", "ml"],
+    tags: ["XR", "AI"],
     where: { it: "tesi + tirocinio · Rai CRITS", en: "master's thesis + internship · Rai CRITS" },
     text: {
       it: "Pre-Visualizzazione su Meta Quest: chiedi un oggetto a voce, l'AI genera l'immagine e poi il modello 3D, che compare in scena e si modifica. Unity, Whisper, n8n, ComfyUI.",
@@ -79,7 +79,7 @@ window.PROJECTS = [
     date: "26-07-01", // ~
     title: "Unreal Engine - Technical Art",
     role: { it: "Unreal Engine Developer", en: "Unreal Engine Developer" },
-    tags: ["unreal", "3d", "vfx"],
+    tags: ["UNREAL", "3D", "VFX"],
     where: "Technical Art",
     text: {
       it: "Cinematica, ambienti e lighting in Unreal, VFX con Niagara.",
@@ -100,7 +100,7 @@ window.PROJECTS = [
     date: "26-07-01", // ~
     title: "Unreal Engine - MetaHuman",
     role: { it: "Unreal Engine Developer", en: "Unreal Engine Developer"},
-    tags: ["unreal", "3d"],
+    tags: ["UNREAL", "3D"],
     where: "Technical Art",
     text: {
       it: "Personaggi digitali e gemelli digitali con MetaHuman in Unreal.",
@@ -120,10 +120,10 @@ window.PROJECTS = [
     date: "26-07-01", // ~
     title: "3D Scan From Reality",
     role: { it: "Developer", en: "Developer" },
-    tags: ["3d"],
+    tags: ["3D", "UNREAL"],
     where: "Technical Art",
     text: {
-      it: "Un cortile ricostruito dal reale, in fotogrammetria e in gaussian splatting.",
+      it: "Un cortile reale ricostruito in fotogrammetria e in gaussian splatting",
       en: "A courtyard rebuilt from reality, with photogrammetry and gaussian splatting."
     },
     cover: "assets/technical-art/gaussian-cover.jpg",
@@ -141,7 +141,7 @@ window.PROJECTS = [
     date: "26-03-01", // ~
     title: "Logo Few Shot Recognition",
     role: { it: "Developer", en: "Developer" },
-    tags: ["ml", "vision"],
+    tags: ["AI", "ML"],
     where: "Machine Learning for Vision and Multimedia",
     text: {
       it: "Few-shot logo retrieval con rete siamese ResNet-50 e triplet loss: riconosce brand mai visti in training. LogoDet-3K → FlickrLogos-32.",
@@ -160,7 +160,7 @@ window.PROJECTS = [
     date: "26-06-01", // ~
     title: "VFX",
     role: { it: "CG Engineer", en: "CG Engineer" },
-    tags: ["vfx", "film"],
+    tags: ["VFX", "CINEMA"],
     where: { it: "VFX e cinema di animazione", en: "VFX and animated film" },
     text: {
       it: "Il progetto finale, più compositing e camera tracking in Nuke, motion graphics in After Effects ed esercitazioni sui sistemi particellari in Houdini.",
@@ -181,7 +181,7 @@ window.PROJECTS = [
     date: "26-12-01", // ~
     title: "Déjà Vu",
     role: { it: "Concept, animazione, maker", en: "Concept, animation, maker" },
-    tags: ["film", "3d"],
+    tags: ["CINEMA", "3D"],
     where: { it: "Character Animation", en: "Character Animation" },
     text: {
       it: "Pitch per una miniserie in tecnica mista: live action e Moko, un alieno in claymation. Pre-produzione, puppet, compositing.",
@@ -202,7 +202,7 @@ window.PROJECTS = [
     date: "26-02-01",
     title: "Upics: Vending Machine Concept",
     role: { it: "UI, UX e comunicazione Polaroid – app – ESP32", en: "UI, UX and Polaroid – app – ESP32 communication" },
-    tags: ["design"],
+    tags: ["DESIGN"],
     where: "Digital Interaction Design",
     text: {
       it: "Una stazione di stampa istantanea in stile Polaroid, con la sua app sviluppata con Arduino. Ho curato UI, UX e la comunicazione tra Polaroid, app ed ESP32.",
@@ -221,7 +221,7 @@ window.PROJECTS = [
     date: "25-07-01", // ~
     title: "SunCoin",
     role: { it: "UI, UX, concept", en: "UI, UX, concept" },
-    tags: ["design", "gamification"],
+    tags: ["DESIGN", "GAMIFICATION"],
     where: "UX design",
     text: {
       it: "App che trasforma la gestione dell'energia solare in un gioco: missioni, quiz e sfide per usare meglio il fotovoltaico.",
@@ -237,7 +237,7 @@ window.PROJECTS = [
     date: "26-01-15",
     title: "Mutti Unfiltered",
     role: { it: "Autore: idea creativa e strategia di comunicazione social", en: "Author: creative concept and social media communication strategy" },
-    tags: ["design"],
+    tags: ["DIGITAL STRATEGY"],
     where: { it: "Digital strategy · commissionato da Mutti", en: "Digital strategy · commissioned by Mutti" },
     text: {
       it: "Progetto realmente commissionato dalla divisione Corporate di Mutti: una strategia digitale per portare il brand alla Gen Z, tra creator, UGC e vlog di filiera.",
@@ -257,7 +257,7 @@ window.PROJECTS = [
     date: "26-03-01", // ~
     title: "Chaos Between Us: A VR Experience",
     role: { it: "VR Developer", en: "VR Developer" },
-    tags: ["xr", "vr"],
+    tags: ["XR", "VR"],
     where: { it: "Realtà virtuale e aumentata", en: "Virtual and augmented reality" },
     text: {
       it: "Un'esperienza in realtà virtuale sviluppata in Unity (C#) nell'ambito del corso di Realtà Virtuale.",
@@ -275,7 +275,7 @@ window.PROJECTS = [
     title: "Risonanze: A Musical XR Experience",
     role: { it: "Sceneggiatura e presa diretta audio", en: "Screenplay and on-set sound recording" },
     egg: { youtube: "XEUcYnDQ6ok", after: 3 },   // easter egg: apri e chiudi 3 volte
-    tags: ["xr", "film"],
+    tags: ["XR", "film"],
     where: { it: "Cinema immersivo", en: "Immersive cinema" },
     text: {
       it: "Cortometraggio a 360° al Conservatorio di Torino, dentro l'orchestra. Sceneggiatura e presa diretta audio.",
@@ -288,7 +288,7 @@ window.PROJECTS = [
     date: "25-12-01", // ~
     title: "AI & Lavoro: Social Listening Su X E Analisi Dei Grafi",
     role: { it: "Co-Autore", en: "Co-Author" },
-    tags: ["research"],
+    tags: ["RESEARCH"],
     where: { it: "Social media · analisi dei grafi", en: "Social media · graph analysis" },
     text: {
       it: "Social listening, web scraping e teoria dei grafi sulle narrative di IA e lavoro su X e TikTok: sostituzione, transumanesimo, complottismo.",
@@ -306,7 +306,7 @@ window.PROJECTS = [
     date: "25-06-15", // ~
     title: "A McDonald's Spot In Blender",
     role: { it: "Modellazione, rig e animazione 3D di una parte dello spot", en: "3D modelling, rigging and animation of part of the commercial" },
-    tags: ["3d"],
+    tags: ["3D"],
     where: "Computer animation",
     text: {
       it: "Ho modellato, riggato e animato in 3D una parte di uno spot in Blender.",
@@ -320,7 +320,7 @@ window.PROJECTS = [
     date: "25-06-10", // ~
     title: "Sottek Hearing Model",
     role: { it: "Co-Autore", en: "Co-Author" },
-    tags: ["research"],
+    tags: ["RESEARCH"],
     where: { it: "Ingegneria del suono", en: "Sound engineering" },
     text: {
       it: "Valutazioni psicoacustiche in ambito automotive con il modello uditivo di Sottek.",
@@ -338,7 +338,7 @@ window.PROJECTS = [
     date: "24-10-01", // ~
     title: "A New Machine Learning Classifier For Recognizing K-Complexes",
     role: { it: "Autore", en: "Author" },
-    tags: ["ml", "research"],
+    tags: ["ML", "RESEARCH"],
     where: { it: "Laurea in Informatica · Dip. di Matematica, UniTo", en: "BSc Computer Science · Mathematics Dept., UniTo" },
     text: {
       it: "Un nuovo classificatore di machine learning in R per riconoscere i complessi K nei tracciati EEG del sonno: prestazioni e scelta dei parametri liberi.",

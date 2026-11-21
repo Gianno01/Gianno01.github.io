@@ -47,7 +47,7 @@ window.SITE = {
     { label: { it: "scarica cv", en: "download cv" }, url: "assets/docs/cv-marco-giannone.pdf" }
   ],
   contacts: [
-    { label: "youtube",   url: "https://github.com/Gianno01" },
+    { label: "github",   url: "https://github.com/Gianno01" },
     { label: "linkedin", url: "https://www.linkedin.com/in/marco-giannone0" },
     { label: "itch.io",  url: "https://mgiannone.itch.io" },
     { label: "email",    url: "mailto:marco.giannone10@hotmail.it" }

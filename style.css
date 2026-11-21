@@ -230,3 +230,32 @@ a { color: inherit; text-decoration: none; }
   font: 400 34px/1 var(--sans); color: #fff;
 }
 @keyframes egg-in { from { opacity: 0; transform: scale(1.04); } }
+
+/* ascii theater */
+.theater { position: relative; z-index: 2; padding: 12vh var(--pad) 0; }
+.t-head, .t-foot {
+  display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 12px; color: var(--mute);
+}
+.t-head .date { flex: 0 0 auto; color: var(--mute); }
+.t-head .now { color: var(--fg); flex: 1; }
+.t-ctrl { display: flex; gap: 14px; }
+.t-ctrl button { all: unset; cursor: pointer; color: var(--mute); }
+.t-ctrl button:hover { color: var(--accent); }
+.screen {
+  margin: 14px 0 10px;
+  width: 100%;
+  min-height: 30vh;
+  font-family: var(--mono);
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: pre;
+  overflow: hidden;
+  color: #ecebe6;
+  background: #0a0a0a;            /* always a dark room, like a cinema */
+  padding: 14px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.t-foot { justify-content: space-between; }
+.t-foot a:hover { color: var(--accent); }

@@ -39,6 +39,23 @@
 
   <main id="feed" class="feed"></main>
 
+  <section class="theater" id="theater" aria-label="ascii theater">
+    <div class="t-head">
+      <span class="date">ascii theater</span>
+      <span class="now"></span>
+      <span class="t-ctrl">
+        <button class="t-prev" type="button" aria-label="previous">◀</button>
+        <button class="t-play" type="button"></button>
+        <button class="t-next" type="button" aria-label="next">▶</button>
+      </span>
+    </div>
+    <pre class="screen" aria-hidden="true"></pre>
+    <div class="t-foot">
+      <span class="meta"></span>
+      <a href="https://ascii.theater/" target="_blank" rel="noopener">ispirato ad ascii.theater ↗</a>
+    </div>
+  </section>
+
   <footer class="bottom">
     <div class="foot">
       <span id="copy"></span>
@@ -52,5 +69,6 @@
   <script src="main.js"></script>
   <script src="assets/moon/texture.js"></script>
   <script src="moon.js"></script>
+  <script src="ascii.js"></script>
 </body>
 </html>
